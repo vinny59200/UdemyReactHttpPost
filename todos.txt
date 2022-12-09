@@ -2,8 +2,13 @@
 
 2) Add the data: Java champion buddys-- name/year/gender V
 
-3) Add the hooks: useState, and useEffect 
+3) Add the hooks: useState, and useEffect V
 
 4) Do the http fetch call
 
 5) Display in the view the content of the data
+
+
+To sumup the httpbin call
+
+body -> httpbin -> echo the input body
