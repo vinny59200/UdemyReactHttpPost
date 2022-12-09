@@ -1,22 +1,37 @@
-import logo from './logo.svg';
+import JsonData from './data.json'
+import { useState, useEffect } from "react";
 import './App.css';
 
 function App() {
+  const [bar, setBar] = useState([]);
+  const foo = JsonData;
+
+  function doHttpFetchCall(fooBody) {
+    fetch('https://httpbin.org/post',
+      {
+        method: 'POST',
+        body: JSON.stringify(fooBody),
+        headers: { 'Content-Type': 'application/json' }
+      }).then(response =>
+        response.json()).then(data => {
+          setBar(foo);
+        });
+  }
+
+
+  useEffect(() => {
+    doHttpFetchCall(foo)
+  }, [foo]
+  )
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {bar.map((baz, index) => {
+          return (
+            <h1 key={index}>{baz.name} in {baz.year}</h1>
+          );
+        })}
       </header>
     </div>
   );

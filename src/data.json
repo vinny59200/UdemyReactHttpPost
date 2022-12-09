@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Andres",
+        "year": 2010,
+        "gender": "Male"
+    },
+    {
+        "name": "Monica",
+        "year": 2017,
+        "gender": "Female"
+    },
+    {
+        "name": "Brian",
+        "year": 2020,
+        "gender": "Male"
+    }
+]
